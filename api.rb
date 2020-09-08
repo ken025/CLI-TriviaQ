@@ -11,6 +11,8 @@ trivia_hash = JSON.parse(resp.body, symbolize_names:true)
 
 trivia_arr = trivia_hash[:results]
 
+binding.pry 
+
 trivia_questions = trivia_arr.collect do |question|
   Trivia.new(question)
 end 
