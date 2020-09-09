@@ -6,3 +6,5 @@ require 'pry'
 
 require_relative '../lib/trivia'
 require_relative '../lib/api'
+require_relative '../lib/cli'
+CLI.new.start 

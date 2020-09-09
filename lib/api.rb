@@ -7,9 +7,6 @@ trivia_arr = trivia_hash[:results]
  
 triv_ques = trivia_arr.collect do | q |
     Trivia.new(q)
+  end 
 end 
-end
 end 
-
-
-binding.pry

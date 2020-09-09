@@ -12,7 +12,8 @@ class CLI
   end 
   
   def this_question
-   puts '#{Trivia.all.first.question}'
+   puts "#{Trivia.all.first.question}"
+   Trivia.all.first.total_answers.flatten.each do 
    binding.pry 
     
   end 
