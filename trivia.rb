@@ -7,6 +7,7 @@ class Trivia
   
   def initialize(questions)
     self.triviaQ = question[:questions]
+    self.triviaA = questions[:correct_answer]
     @@all << self 
   end 
   

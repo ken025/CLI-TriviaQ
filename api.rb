@@ -1,3 +1,4 @@
+require_relative 'trivia'
 require 'rest-client'
 require 'json'
 require 'pry'
@@ -9,10 +10,18 @@ trivia_hash = JSON.parse(resp.body, symbolize_names:true)
 
 trivia_arr = trivia_hash[:results]
 quest_arr = trivia_arr.collect { |questions| questions[:question]}
-ansr_arr = trivia_arr.collect { |questions| questions[:correct_answer]}
+ansr_arr = trivia_arr.collect { |answer| answer[:correct_answer]}
 
-binding.pry 
 
-trivia_questions = trivia_arr.collect do |questions|
+trivia_questions = quest_arr.collect do |questions|
   Trivia.new(questions)
 end 
+  
+trivia_questions.each do | qs |
+  resp = RestClient.get(qs.correct_answer)
+  binding.pry
+  
+end 
+
+
+binding.pry
