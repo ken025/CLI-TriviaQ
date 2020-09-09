@@ -16,3 +16,5 @@ class Trivia
   
   binding.pry
 end 
+
+
