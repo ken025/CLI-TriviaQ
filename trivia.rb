@@ -6,8 +6,8 @@ class Trivia
   attr_accessor :triviaQ
   
   def initialize(questions)
-    self.triviaQ = question[:questions]
-    self.triviaA = questions[:correct_answer]
+    self.trivia_q = question[:questions]
+    self.trivia_a = questions[:correct_answer]
     @@all << self 
   end 
   
