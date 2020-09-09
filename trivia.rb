@@ -3,10 +3,10 @@ require 'pry'
 class Trivia
   @@all = []
   
-  attr_accessor :questions
+  attr_accessor :triviaQ
   
-  def initialize(question)
-    self.name = question[questions]
+  def initialize(questions)
+    self.triviaQ = question[:questions]
     @@all << self 
   end 
   
