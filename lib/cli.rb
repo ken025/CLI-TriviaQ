@@ -1,7 +1,8 @@
 class CLI 
   
   def start 
-    puts "Welcome to Trivia Q"
+    # puts "Welcome to Trivia Q"
+    puts font.write("TRIVIA Q")
     puts "--------------------"
     puts "This is a mid level, multiple choice quiz of General Knowledge"
     puts "--------------------"
@@ -17,7 +18,7 @@ end
    question_crrct = question_str.gsub("&quot;",'"').gsub("&#039;","'").gsub("&amp;","&")
    puts "\n #{question_crrct}"
    
-   options = Trivia.all.first.total_answers.flatten.each.with_index(1) {|ansr, i| puts "#{i}. #{ansr}"}
+   options = Trivia.all.first.total_answers.flatten.shuffle.each.with_index(1) {|ansr, i| puts "#{i}. #{ansr}"}
    user_ansr = gets.chomp.to_i-1 
    if !user_ansr.between?(0,3)
     puts "That is not one of the available options."
