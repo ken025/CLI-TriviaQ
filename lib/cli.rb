@@ -46,8 +46,7 @@ end
     puts "\n Would you like to play again?"
     puts "Enter Y (to continue playing) or N (to exit)"
     input = gets.chomp.downcase
-    if input == "y" 
-      Trivia.reset 
+    if input == "y"
       start
     elsif input == "n"
       puts "I'm sad to see you go, hope you enjoyed!"
