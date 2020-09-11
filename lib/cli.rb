@@ -14,11 +14,11 @@ class CLI
 end 
 
   def this_question
-    puts "#{Trivia.all.first.question}"
-  # question_str = Trivia.all.first.question
-  # fixed_ques = question_str.gsub("&#039;", "'") #, ("&ldquo;", "")
-   options = Trivia.all.first.total_answers.flatten.each.with_index(1) {|ansr, i| puts "#{i}. #{ansr}"}
+   question_str = Trivia.all.first.question
+   question_crrct = question_str.gsub("&quot;",'"').gsub("&#039;","'").gsub("&amp;","&")
+   puts "#{question_crrct}"
    
+   options = Trivia.all.first.total_answers.flatten.each.with_index(1) {|ansr, i| puts "#{i}. #{ansr}"}
    user_ansr = gets.chomp.to_i-1 
    if !user_ansr.between?(0,3)
     puts "That is not one of the available options."
@@ -40,7 +40,7 @@ def re_atttempt
   if another_ques == "y"
     this_question
   elsif another_ques == "n"
-  "I'm sad to see ypu go! Hope you enjoyed!"
+  puts "The answer you were looking for was:  #{Trivia.all.first.correct_answer}."
   exit
 end 
 end 
