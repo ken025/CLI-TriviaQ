@@ -16,6 +16,9 @@ class Trivia
     @@all 
   end 
   
+  def self.reset 
+    self.all.clear
+  end 
 end 
 
 

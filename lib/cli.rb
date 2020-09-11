@@ -15,7 +15,7 @@ end
 
   def this_question
    question_str = Trivia.all.first.question
-   question_crrct = question_str.gsub("&quot;",'"').gsub("&#039;","'").gsub("&amp;","&")
+   question_crrct = question_str.gsub("&quot;",'"').gsub("&ldquo;", "").gsub("&#039;","'").gsub("&amp;","&")
    puts "\n #{question_crrct}"
    
    options = Trivia.all.first.total_answers.flatten.shuffle.each.with_index(1) {|ansr, i| puts "#{i}. #{ansr}"}
@@ -47,6 +47,7 @@ end
     puts "Enter Y (to continue playing) or N (to exit)"
     input = gets.chomp.downcase
     if input == "y"
+      Trivia.reset
       start
     elsif input == "n"
       puts "I'm sad to see you go, hope you enjoyed!"
