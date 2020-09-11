@@ -1,2 +1,2 @@
-get 'tty-font'
-font = TTY::Font.new(:triviaq)
+# get 'tty-font'
+# font = TTY::Font.new(:triviaq)

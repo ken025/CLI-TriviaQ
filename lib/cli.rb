@@ -1,8 +1,8 @@
 class CLI 
   
   def start 
-    # puts "Welcome to Trivia Q"
-    puts font.write("TRIVIA Q")
+    puts "Welcome to Trivia Q"
+    # puts font.write("TRIVIA Q")
     puts "--------------------"
     puts "This is a mid level, multiple choice quiz of General Knowledge"
     puts "--------------------"
@@ -47,7 +47,8 @@ end
     puts "Enter Y (to continue playing) or N (to exit)"
     input = gets.chomp.downcase
     if input == "y" 
-      this_question
+      Trivia.reset 
+      start
     elsif input == "n"
       puts "I'm sad to see you go, hope you enjoyed!"
         exit
