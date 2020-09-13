@@ -5,6 +5,7 @@ resp = RestClient.get('https://opentdb.com/api.php?amount=15&category=9&difficul
 
 trivia_hash = JSON.parse(resp.body, symbolize_names:true)
 trivia_arr = trivia_hash[:results]
+binding.pry  
  
 triv_ques = trivia_arr.collect do | q |
     Trivia.new(q)
