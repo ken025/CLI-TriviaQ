@@ -3,9 +3,9 @@ class CLI
   def start 
     puts "Welcome to Trivia Q"
     # puts font.write("TRIVIA Q")
-    puts "--------------------"
+    puts "----------------------------------------------------------------"
     puts "This is a mid level, multiple choice quiz of General Knowledge"
-    puts "--------------------"
+    puts "----------------------------------------------------------------"
     puts "Let's start!"
   
     API.get_questions
