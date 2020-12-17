@@ -5,6 +5,6 @@ A Trivia Quiz built using the Open Trivia Database that allows you to customize 
 ## To use this app:
 - copy the link to the code: github.com/ken025/CLI-TriviaQ
 - clone the repository using the link
-- instal the rest-client and json gems. (ex. gem instal json)
+- install the rest-client and json gems. (ex. gem instal json)
 - run `ruby bin/TriviaQ.rb`
 
